@@ -1,0 +1,11 @@
+{
+  "name": "numo",
+  "version": "1.0.0",
+  "description": "Numo Development",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "atps.php",
+  "license": "ISC"
+}

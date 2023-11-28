@@ -7,8 +7,8 @@ module.exports = {
   mode: 'production',
   // mode: 'development',
   entry: {
-    app: './assets/js/app.js',
-    style: './assets/css/style.css'
+    main: './main.js',
+    style: './resourses/css/style.css'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
