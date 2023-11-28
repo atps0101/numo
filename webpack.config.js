@@ -7,7 +7,7 @@ module.exports = {
   mode: 'production',
   // mode: 'development',
   entry: {
-    main: './main.js',
+    main: './resourses/js/main.js',
     style: './resourses/css/style.css'
   },
   output: {
