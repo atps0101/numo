@@ -1,4 +1,10 @@
 
 import { initApp } from './app.js';
 
-initApp(); 
+const props = {
+    test:'test'
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initApp(props);   
+});

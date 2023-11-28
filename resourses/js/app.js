@@ -1,4 +1,4 @@
 
-export const initApp = () => {
-    console.log('init')
+export const initApp = (props) => {
+    console.log(props)
 };

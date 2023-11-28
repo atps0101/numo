@@ -7,5 +7,9 @@
     "test": "test"
   },
   "author": "atps.php",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "hls.js": "^1.4.12",
+    "video-encoder": "^0.0.2"
+  }
 }
