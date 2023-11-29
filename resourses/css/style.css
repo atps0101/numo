@@ -11,6 +11,7 @@ body{
     font-size: 12px;
     box-sizing: border-box;
     line-height: 100%;
+    scroll-behavior: smooth;
 }
 a{
     text-decoration: none;
@@ -171,7 +172,6 @@ header{
     display: flex;
 	margin-bottom: 81px;
 	align-items: center;
-    /* width: max-content; */
 }
 .hero-nav .arrow{
     display: flex;
@@ -180,8 +180,6 @@ header{
 }
 .btn-hero-text{
     color: var(--main-2, #070300);
-    leading-trim: both;
-    text-edge: cap;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -298,9 +296,10 @@ header{
         font-size: 10px;
     }
     .hero_text_wrapper::after {
-        width: 55px;
-        right: -55px;
+        width: 30px;
+        right: -30px;
         background-size: cover;
+        background-position: -20px;
     }
     .hero_text {
         width: 230px;
@@ -332,7 +331,7 @@ header{
     line-height: 110%; 
 }
 
-@media (max-width:1279px){
+@media (max-width:1024px){
     .section-title{
         font-size: 28px;
     }
@@ -340,4 +339,166 @@ header{
 
 .projects{
     padding-top: 150px;
+}
+/* .projects_wrapper{
+    height:100vh;
+} */
+.projects_slider
+{
+    height:100%;
+}
+.projects .section-title{
+    margin-bottom: 62px;
+}
+.projects_slider_wrapper{
+    width:100%;
+    height:100%;
+}
+.project_slider-arrows{
+    display: flex;
+    gap:2px;
+    justify-content: flex-end;
+}
+
+.arrow-slider-prev,
+.arrow-slider-next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166.5px;
+    height: 57px;
+    background: #00C66E;
+}
+.project_slide{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding: 270px 0;
+}
+.container-slide{
+    display: flex;
+    height:100%;
+}
+.project_text{
+    background: var(--main-1, #00C66E);
+    height: max-content;
+    position: relative;
+    padding-left: 65px;
+}
+.project_text::after{
+    content: '';
+    position: absolute;
+    top:0;
+    right:-66px;
+    width:66px;
+    height:100%;
+    background-image: url('../img/project-text-bg-fix.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.project_title{
+    color: var(--main-2, #070300);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 136px;
+}
+.project_description{
+    width: 389px;
+    color: var(--main-2, #070300);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 50px;
+}
+.project_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 28px;
+    border: 1px solid var(--main-2, #070300);
+    margin-top: 50px;
+    margin-bottom: 65px;
+}
+
+section.video{
+    position: relative;
+}
+
+.video_btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+.video_btn svg{
+    width:100%;
+}
+
+
+@media (max-width:1024px){
+    .projects {
+        padding-top: 50px;
+    }
+    .projects .section-title {
+        margin-bottom: 34px;
+    }
+    .arrow-slider-prev, .arrow-slider-next{
+        width: 15%;
+        min-height: 20px;
+        max-height:20px;
+        padding: 0 15px
+    }
+    .project_slide {
+        height: 430px;
+        padding: 0;
+        background-position: 30% 0;
+    }
+    .project_text {
+        padding-left: 15px;
+        margin-top: 165px;
+    }
+
+    .project_text::after{
+        background-size: contain
+    }
+    .project_title{
+        font-size: 20px;
+        margin-top: 74px;
+    }
+    .project_description{
+        font-size: 10px;
+        margin-top: 20px;
+        width: 210px;
+    }
+    .project_btn{
+        width: 60px;
+        height: 16px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .project_btn svg{
+        width:30px;
+    }
+    section.video{
+        height:500px;
+    }
+    section.video svg{
+        object-fit: cover;
+        transform: translateX(-40%);
+    }
+
+    .video_btn{
+        width:60px;
+    }
+}
+
+section.video .video_btn svg{
+    transform: none;
 }

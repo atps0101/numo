@@ -9,7 +9,6 @@
   "author": "atps.php",
   "license": "ISC",
   "dependencies": {
-    "hls.js": "^1.4.12",
-    "video-encoder": "^0.0.2"
+    "swiper": "^11.0.5"
   }
 }
