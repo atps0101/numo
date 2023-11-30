@@ -1,3 +1,5 @@
+//node compressImagesImagemin.mjs
+
 import fs from 'fs';
 import path from 'path';
 import imagemin from 'imagemin';
