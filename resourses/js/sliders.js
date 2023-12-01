@@ -1,5 +1,3 @@
-// import Swiper from 'swiper';
-
 const advantageSlider = () => {
     
     const advantageSliderSelector = '.advantage_swiper';
@@ -43,7 +41,6 @@ const advantageSlider = () => {
         }
     });
 };
-
 
 export const initSliders = () => {
     advantageSlider();

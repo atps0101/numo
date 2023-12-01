@@ -28,6 +28,8 @@
     "imagemin": "^8.0.1",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^10.0.1"
+    "imagemin-svgo": "^10.0.1",
+    "inputmask": "^5.0.8",
+    "swiper": "^11.0.5"
   }
 }
