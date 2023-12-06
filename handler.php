@@ -1,7 +1,14 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (!empty($_POST["form"]) || !empty($_POST["email"]) && filter_var($_POST["email"]) ) {
 
     header('Content-Type: application/json'); 
+
+
+    if ($_POST["form"] == 'subscribe' && !filter_var($_POST["email"])) {
+        header("HTTP/1.1 404 Not Found");
+        header("Location: /404");
+        exit;
+    }
 
     $formData = array();
 
@@ -10,10 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     );
 
 
-    if (isset($_POST["form"]) && $_POST["form"] != 'subscribe' ) {
+
+
+    if (isset($_POST["form"]) && $_POST["form"] != 'subscribe') {
     
-        if (isset($_POST["name"]) && (strlen($_POST["name"]) > 2 && strlen($_POST["name"]) < 15)) {
+        if (isset($_POST["name"])) {
             $formData["name"] = $_POST["name"];
+            
+            if (mb_strlen($formData["name"], 'UTF-8') < 2 || mb_strlen($formData["name"], 'UTF-8') > 15) {
+                echo json_encode(array("status" => "error", "input" => "name", "message" => $message));
+                exit;
+            }
         } else {
             echo json_encode(array("status" => "error", "input" => "name", "message" => $message));
             exit;
@@ -31,9 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     }
 
-    if (!empty($_POST["email"])) {
+    if (isset($_POST["email"]) && !empty($_POST["email"])) {
         if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-
             $formData["email"] = $_POST["email"];
         }else{
             echo json_encode(array("status" => "error", "input" => "email"));
@@ -41,15 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } 
     
-    foreach ($_POST as $key => $value) {
-        if (!isset($formData[$key])) {
-            $formData[$key] = $value;
-        }
-    }
-    
-
     if(isset($formData)){
 
+        foreach ($_POST as $key => $value) {
+            if (!isset($formData[$key])) {
+                $formData[$key] = $value;
+            }
+        }
+        
         $jsonFormData = json_encode($formData);
 
         $url = "https://hook.eu2.make.com/5qswe42ywkvce17vypk1xkrcahr1c5yb";

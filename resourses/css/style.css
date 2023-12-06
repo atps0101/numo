@@ -158,7 +158,8 @@ header{
     line-height: 110%; 
     margin-top: 70px;
 	margin-bottom: 86px;
-	width: 771px;
+	/* width: 771px; */
+    width: 795px;
 }
 
 .hero_text h2{
@@ -196,6 +197,7 @@ header{
     font-weight: 700;
     line-height: normal;
     margin-right: 30px;
+    text-transform: uppercase;
 }
 
 
@@ -352,9 +354,7 @@ header{
 .projects{
     padding-top: 150px;
 }
-/* .projects_wrapper{
-    height:100vh;
-} */
+
 .projects_slider
 {
     height:100%;
